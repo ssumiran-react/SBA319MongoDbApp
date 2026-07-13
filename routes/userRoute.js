@@ -8,11 +8,12 @@ router.route("/")
     //const result = await UserModel.find() ;
     const result = await UserModel.aggregate([
       {
-        $match:{
+        $match: {
             applicant: "Loan"
-          }
+        }
       }
     ]);
+
     //console.log("in get user");
     if (!result) res.send("Not found").status(404);
     else res.json(result).status(200);
