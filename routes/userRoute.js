@@ -9,7 +9,7 @@ router.route("/")
     const result = await UserModel.aggregate([
       {
         $match:{
-            role: "Customer"
+            applicant: "Loan"
           }
       }
     ]);

@@ -1,13 +1,11 @@
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
-    userid: String,
+    userid: Number,
     username: String,
     email: String,
     fullname: String,
-    role: String,
-    projectname:String
-    
+    applicant:String    
 })
 
 // generate a model based off the schema (model name, schema, collection name)
