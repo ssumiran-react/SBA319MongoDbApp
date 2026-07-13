@@ -4,8 +4,7 @@ import EmployeeModel from '../models/EmployeeModel.js';
 const router = express.Router();
 
 router.route("/")
-  .get( async (req, res) => { // Get All employee
-    //const result = await UserModel.find() ;
+  .get( async (req, res) => { // Get All Loan employee
     const result = await EmployeeModel.aggregate([
       {
         $match:{
@@ -24,7 +23,7 @@ router.route("/")
   })
 
 router.route("/delete/:empid")  
-  .delete(async (req, res)=> { //console.log("in delete _id: ");
+  .delete(async (req, res)=> { console.log("in delete empid: ",req.params.empid );
     const result = await EmployeeModel.findOneAndDelete({empid: req.params.empid });
     
     if (!result) res.send("Not found").status(404);
