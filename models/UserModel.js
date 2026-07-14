@@ -7,6 +7,6 @@ const userSchema = new mongoose.Schema({
     fullname: String,
     applicant:String    
 })
-
+userSchema.index({ userid: 1 });
 // generate a model based off the schema (model name, schema, collection name)
 export default mongoose.model("user", userSchema, "users");

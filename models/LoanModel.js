@@ -12,6 +12,7 @@ const loanSchema = new mongoose.Schema({
     }],
     active: String
 })
-
+loanSchema.index({loadid:1});
+loanSchema.index({date:-1});
 // generate a model based off the schema (model name, schema, collection name)
 export default mongoose.model("loan", loanSchema, "loans");
